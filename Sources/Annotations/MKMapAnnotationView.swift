@@ -32,8 +32,8 @@ class MKMapAnnotationView<Content: View>: MKAnnotationView {
         ])
         self.controller = controller
         
-        if let anchor = mapAnnotation.anchorPoint {
-            self.centerOffset = anchor
+        if let centerOffset = mapAnnotation.centerOffset {
+            self.centerOffset = centerOffset
         }
     }
 

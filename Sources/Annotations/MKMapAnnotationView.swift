@@ -31,6 +31,10 @@ class MKMapAnnotationView<Content: View>: MKAnnotationView {
             controller.view.heightAnchor.constraint(equalTo: heightAnchor),
         ])
         self.controller = controller
+        
+        if let anchor = mapAnnotation.anchorPoint {
+            self.centerOffset = anchor
+        }
     }
 
     // MARK: Overrides

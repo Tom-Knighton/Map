@@ -42,6 +42,7 @@ public struct ViewMapAnnotation<Content: View>: MapAnnotation {
 
     public let annotation: MKAnnotation
     let content: Content
+    let anchorPoint: CGPoint?
 
     // MARK: Initialization
 
@@ -49,9 +50,11 @@ public struct ViewMapAnnotation<Content: View>: MapAnnotation {
         coordinate: CLLocationCoordinate2D,
         title: String? = nil,
         subtitle: String? = nil,
+        anchorPoint: CGPoint? = nil,
         @ViewBuilder content: () -> Content
     ) {
         self.annotation = Annotation(coordinate: coordinate, title: title, subtitle: subtitle)
+        self.anchorPoint = anchorPoint
         self.content = content()
     }
 

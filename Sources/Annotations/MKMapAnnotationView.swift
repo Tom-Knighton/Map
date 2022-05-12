@@ -48,6 +48,7 @@ class MKMapAnnotationView<Content: View>: MKAnnotationView {
         controller?.view.removeFromSuperview()
         controller?.removeFromParent()
         controller = nil
+        self.centerOffset = self.center
     }
 
 }

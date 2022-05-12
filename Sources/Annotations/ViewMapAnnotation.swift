@@ -64,6 +64,7 @@ public struct ViewMapAnnotation<Content: View>: MapAnnotation {
     ) {
         self.annotation = annotation
         self.content = content()
+        self.anchorPoint = nil
     }
 
     // MARK: Methods
